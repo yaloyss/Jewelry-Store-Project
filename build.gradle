@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.4.5'
 	id 'io.spring.dependency-management' version '1.1.7'
 	id 'gg.jte.gradle' version '3.1.16'
+	id 'org.flywaydb.flyway' version '9.16.0'
 }
 
 group = 'com.yaloys'
@@ -29,13 +30,19 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'gg.jte:jte-spring-boot-starter-3:3.1.16'
-	implementation 'org.flywaydb:flyway-core'
-	implementation 'org.flywaydb:flyway-mysql'
+	implementation 'org.flywaydb:flyway-core:11.8.1'
+	implementation 'org.flywaydb:flyway-mysql:11.8.1'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+flyway {
+	url = 'jdbc:mysql://localhost:3306/jewelry_project'
+	user = 'root'
+	password = '1006!6001'
 }
 
 jte {
