@@ -1,4 +1,4 @@
-package data;
+package com.yaloys.jewelry_store.data;
 
 import jakarta.persistence.*;
 import lombok.Getter;

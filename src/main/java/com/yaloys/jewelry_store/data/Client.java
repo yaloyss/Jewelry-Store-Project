@@ -1,4 +1,4 @@
-package data;
+package com.yaloys.jewelry_store.data;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,12 +8,12 @@ import lombok.ToString;
 import java.time.LocalDate;
 
 @Entity
-@Table (name = "employee")
+@Table (name = "client")
 @Getter
 @Setter
 @ToString
 
-public class Employee {
+public class Client {
     @Id
     @GeneratedValue
     private Long id;
@@ -26,12 +26,4 @@ public class Employee {
 
     @Column (name = "phoneNumber", nullable = false)
     private String phoneNumber;
-
-    @Column (name = "schedule")
-    private String schedule;
-
-    @ManyToOne
-    @JoinColumn(name = "positionId")
-    private Position position;
-
 }
