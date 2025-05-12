@@ -30,6 +30,8 @@ public class Employee {
     @Column (name = "schedule")
     private String schedule;
 
-    @Column (name = "position")
-    private String position;
+    @ManyToOne
+    @JoinColumn(name = "positionId")
+    private Position position;
+
 }
