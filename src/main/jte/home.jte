@@ -11,6 +11,7 @@
         <li><a href="/client">Clients</a></li>
         <li><a href="/product">Products</a></li>
         <li><a href="/employee">Employees</a></li>
+        <li><a href="/bill">Bills</a></li>
     </ul>
 </nav>
 </body>
