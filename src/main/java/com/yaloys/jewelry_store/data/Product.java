@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
+import java.util.List;
 import java.math.BigDecimal;
 
 @Entity
@@ -38,4 +38,8 @@ public class Product {
 
     @Column (name = "size", precision = 8, scale = 2)
     private BigDecimal size;
+
+    @OneToMany(mappedBy = "product")
+    private List<Bill> bills;
+
 }

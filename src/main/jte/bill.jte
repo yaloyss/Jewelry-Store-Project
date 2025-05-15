@@ -7,17 +7,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Customers</title>
+    <title>Bills</title>
 </head>
 <body>
-<h1>List of our loyal customers</h1>
+<h1>List of bills</h1>
 <table border="1">
     <thead>
     <tr>
         <th>ID</th>
-        <th>Full Name</th>
-        <th>Birth Date</th>
-        <th>Phone number</th>
+        <th>Date</th>
+        <th>Product name</th>
+        <th>Price</th>
+        <th>Client name</th>
+        <th>Employee name</th>
     </tr>
     </thead>
     <tbody>
@@ -25,9 +27,10 @@
         <tr>
             <td>${bill.getBillId()}</td>
             <td>${bill.getBillDate() != null ? bill.getBillDate().toString() : ""}</td>
-            <td>${bill.getProductId()}</td>
-            <td>${bill.getEmployeeId()}</td>
-            <td>${bill.getClientId()}</td>
+            <td>${bill.getProduct().getName()}</td>
+            <td>${bill.getProduct().getPrice()}</td>
+            <td>${bill.getClient().getFullName()}</td>
+            <td>${bill.getEmployee().getFullName()}</td>
         </tr>
     @endfor
     </tbody>

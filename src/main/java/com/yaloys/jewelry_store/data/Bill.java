@@ -21,12 +21,15 @@ public class Bill
     @Column(name = "billDate", nullable = false)
     private LocalDate billDate;
 
-    @Column (name = "productId", nullable = false)
-    private Long productId;
+    @ManyToOne
+    @JoinColumn(name = "productId", nullable = false)
+    private Product product;
 
-    @Column (name = "employeeId", nullable = false)
-    private Long employeeId;
+    @ManyToOne
+    @JoinColumn (name = "employeeId", nullable = false)
+    private Employee employee;
 
-    @Column (name = "clientId", nullable = false)
-    private Long clientId;
+    @ManyToOne
+    @JoinColumn (name = "clientId", nullable = false)
+    private Client client;
 }

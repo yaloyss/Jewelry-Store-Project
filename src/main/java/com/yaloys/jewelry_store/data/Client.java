@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
+import java.util.List;
 import java.time.LocalDate;
 
 @Entity
@@ -26,4 +26,8 @@ public class Client {
 
     @Column (name = "phoneNumber", nullable = false)
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "client")
+    private List<Bill> bills;
+
 }
