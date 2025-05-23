@@ -1,14 +1,23 @@
 package com.yaloys.jewelry_store.presentation;
 
-import ch.qos.logback.core.model.Model;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.yaloys.jewelry_store.user.AppUser;
+import com.yaloys.jewelry_store.user.AppUserService;
+import com.yaloys.jewelry_store.user.AppUserRequest;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
-public class SignUpController {
-    @GetMapping("/signup")
-    public String signUp (Model model)
-    {
-        return "signup";
+@RestController
+@RequestMapping("/api")
+public class SignUpRestController {
+
+    private final AppUserService appUserService;
+
+    public SignUpRestController(AppUserService appUserService) {
+        this.appUserService = appUserService;
+    }
+
+    @PostMapping("/signup")
+    public AppUser signUpNewUser(@RequestBody AppUserRequest user) {
+        System.out.println("Received sign-up for: " + user.userName());
+        return appUserService.signUp(user);
     }
 }

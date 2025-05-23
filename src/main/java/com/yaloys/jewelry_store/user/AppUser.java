@@ -1,4 +1,4 @@
-package com.yaloys.jewelry_store.data.user;
+package com.yaloys.jewelry_store.user;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -10,11 +10,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
 public class AppUser {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column (name = "userName")

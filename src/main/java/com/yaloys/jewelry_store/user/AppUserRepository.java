@@ -1,4 +1,4 @@
-package com.yaloys.jewelry_store.data.user;
+package com.yaloys.jewelry_store.user;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
