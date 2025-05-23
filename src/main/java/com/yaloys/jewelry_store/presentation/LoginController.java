@@ -1,4 +1,4 @@
 package com.yaloys.jewelry_store.presentation;
 
-public class SignUpController {
+public class LoginController {
 }
