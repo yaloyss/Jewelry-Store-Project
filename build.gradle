@@ -33,6 +33,7 @@ dependencies {
 	implementation 'org.flywaydb:flyway-core:11.8.1'
 	implementation 'org.flywaydb:flyway-mysql:11.8.1'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation("org.springframework.boot:spring-boot-starter-security:3.4.5")
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
