@@ -1,26 +1,34 @@
 package com.yaloys.jewelry_store.user;
 
-import jakarta.transaction.Transactional;
+import com.yaloys.jewelry_store.security.Role;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AppUserService {
 
-    private final AppUserRepository userRepository;
+    private final AppUserRepository appUserRepository;
     private final PasswordEncoder passwordEncoder;
 
     public AppUserService(AppUserRepository userRepository, PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
+        this.appUserRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
-    public AppUser signUp(AppUserRequest request) {
+    public AppUser signUpCustomer(AppUserRequest appUserRequest) {
+        return appUserRepository.save(mapAppUserRequestToEntity(appUserRequest, Role.CUSTOMER));
+    }
+
+    public AppUser signUpAdmin(AppUserRequest appUserRequest) {
+        return appUserRepository.save(mapAppUserRequestToEntity(appUserRequest, Role.ADMIN));
+    }
+
+    public AppUser mapAppUserRequestToEntity(AppUserRequest appUserRequest, Role role) {
         AppUser user = new AppUser();
-        user.setUserName(request.userName());
-        user.setPassword(passwordEncoder.encode(request.password()));
-        user.setRole(request.role());
-        user.setFullName(request.fullName());
-        return userRepository.save(user);
+        user.setFullName(appUserRequest.fullName());
+        user.setUserName(appUserRequest.userName());
+        user.setPassword(passwordEncoder.encode(appUserRequest.password()));
+        user.setRole(role.name());
+        return user;
     }
 }

@@ -17,7 +17,20 @@ public class SignUpRestController {
 
     @PostMapping("/signup")
     public AppUser signUpNewUser(@RequestBody AppUserRequest user) {
-        System.out.println("Received sign-up for: " + user.userName());
-        return appUserService.signUp(user);
+        if ("ADMIN".equalsIgnoreCase(user.role())) {
+            return appUserService.signUpAdmin(user);
+        } else {
+            return appUserService.signUpCustomer(user);
+        }
     }
+
+//    @PostMapping("/signup")
+//    public AppUser signUpNewUser(@RequestBody AppUserRequest user) {
+//        return appUserService.signUpCustomer(user);
+//    }
+//
+//    @PostMapping("/signup/admin")
+//    public AppUser signUpNewAdmin(@RequestBody AppUserRequest user) {
+//        return appUserService.signUpAdmin(user);
+//    }
 }
