@@ -54,14 +54,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
-                // Налаштовуємо авторизацію запитів
                 .authorizeHttpRequests(registry -> {
                     registry.requestMatchers( "/signup", "/signup/**", "/css/**", "/login", "/api/signup", "/api/signup/**").permitAll();
                     registry.requestMatchers("/admin/**").hasRole(Role.ADMIN.name());
                     registry.requestMatchers("/customer/**").hasRole(Role.CUSTOMER.name());
+//                    registry.requestMatchers("/products").hasRole(Role.ADMIN.name());
+                    registry.requestMatchers("/products/**").hasRole(Role.ADMIN.name());
                     registry.anyRequest().authenticated();
                 })
-                // Налаштування форми логіну
                 .formLogin(httpSecurityFormLoginConfigurer -> {
                     httpSecurityFormLoginConfigurer
                             .loginPage("/login")
