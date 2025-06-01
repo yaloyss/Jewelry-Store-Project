@@ -15,8 +15,7 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public void createProduct(ProductRequest request)
-    {
+    public void createProduct(ProductRequest request) {
         Product product = new Product();
         product.setName(request.name());
         product.setWeight(request.weight());
@@ -32,14 +31,12 @@ public class ProductService {
         return productRepository.findAllProducts();
     }
 
-    public Product getById(Long id)
-    {
+    public Product getById(Long id) {
         Optional<Product> product = productRepository.findById(id);
         return product.orElse(null);
     }
 
-    public void updateProduct(Long id, ProductRequest request)
-    {
+    public void updateProduct(Long id, ProductRequest request) {
         Optional<Product> existingProduct = productRepository.findById(id);
         if (existingProduct.isPresent()) {
             Product product = existingProduct.get();
@@ -52,5 +49,10 @@ public class ProductService {
             product.setSize(request.size());
             productRepository.save(product);
         }
+    }
+
+    public void deleteProduct(Long id)
+    {
+        productRepository.deleteById(id);
     }
 }
