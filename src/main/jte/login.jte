@@ -2,82 +2,134 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Login - Jewelry Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
+            background-color: #f8f6f6;
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
+            justify-content: center;
         }
 
         .login-container {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 300px;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 8px 32px rgba(255, 105, 180, 0.1);
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
-            margin-bottom: 1.5rem;
             color: #333;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.1);
         }
 
         label {
             display: block;
-            margin-bottom: 0.3rem;
+            margin-bottom: 8px;
             font-weight: bold;
+            color: #333;
+            text-align: left;
+            font-size: 1.1em;
         }
 
         input[type="text"],
         input[type="password"] {
             width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1em;
+            background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #ff69b4;
+            background: linear-gradient(135deg, #fff0f5, #ffe6f0);
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
         }
 
         .login-button {
             width: 100%;
-            padding: 0.6rem;
-            background-color: #dc53a9;
-            color: white;
-            border: none;
-            border-radius: 5px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+            color: #ff69b4;
+            border: 2px solid transparent;
+            border-radius: 15px;
             font-weight: bold;
+            font-size: 1.1em;
             cursor: pointer;
-            transition: background-color 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 20px;
         }
 
         .login-button:hover {
-            background-color: #a333a1;
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+            border-color: #ff1493;
         }
 
         .create-account {
-            margin-top: 1rem;
+            margin-top: 20px;
             text-align: center;
         }
 
+        .create-account p {
+            color: #333;
+            margin: 0;
+            font-size: 1em;
+        }
+
         .create-account a {
-            color: #dc53a9;
+            color: #ff69b4;
             text-decoration: none;
             font-weight: bold;
+            transition: all 0.3s ease;
         }
 
         .create-account a:hover {
-            text-decoration: underline;
+            color: #ff1493;
+            text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+        }
+
+        form {
+            text-align: left;
+        }
+
+        .form-title {
+            text-align: center;
         }
     </style>
 </head>
 <body>
 <div class="login-container">
     <form action="/login" method="post">
-        <h1>Login</h1>
+        <h1 class="form-title">Login</h1>
+
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
 

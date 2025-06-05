@@ -4,65 +4,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
+    <title>Sign Up - Jewelry Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: white;
+            font-family: 'Raleway', sans-serif;
             margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .signup-container {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 350px;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 8px 32px rgba(255, 105, 180, 0.1);
+            text-align: center;
         }
 
-        .signup-container h1 {
-            text-align: center;
-            margin-bottom: 0.5rem;
+        h1 {
             color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.1);
         }
 
         .signup-container p {
-            text-align: center;
-            color: #555;
-            margin-bottom: 1.5rem;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
+            text-align: left;
         }
 
         .form-group label {
             display: block;
+            margin-bottom: 8px;
             font-weight: bold;
-            margin-bottom: 0.3rem;
+            color: #333;
+            font-size: 1.1em;
         }
 
         .form-group input {
             width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 15px;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1em;
+            background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+            transition: all 0.3s ease;
             box-sizing: border-box;
         }
 
+        .form-group input:focus {
+            outline: none;
+            border-color: #ff69b4;
+            background: linear-gradient(135deg, #fff0f5, #ffe6f0);
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+        }
+
         .error-message {
-            color: red;
-            font-size: 0.85rem;
+            color: #ff1493;
+            font-size: 0.9em;
             display: none;
-            margin-top: 0.3rem;
+            margin-top: 8px;
+            font-weight: 500;
         }
 
         .form-group.error input {
-            border-color: red;
+            border-color: #ff1493;
+            background: linear-gradient(135deg, #ffe6f0, #ffccdd);
         }
 
         .form-group.error .error-message {
@@ -71,24 +97,53 @@
 
         .signup-button {
             width: 100%;
-            padding: 0.7rem;
-            background-color: #dc53a9;
-            color: white;
-            border: none;
-            border-radius: 5px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+            color: #ff69b4;
+            border: 2px solid transparent;
+            border-radius: 15px;
             font-weight: bold;
+            font-size: 1.1em;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+            font-family: 'Raleway', sans-serif;
+            margin-top: 10px;
         }
 
         .signup-button:hover {
-            background-color: #b53486;
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+            border-color: #ff1493;
+        }
+
+        .signup-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .signup-button:disabled:hover {
+            background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+            color: #ff69b4;
+            transform: none;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+        }
+
+        .form-title {
+            text-align: center;
+        }
+
+        .signup-form {
+            text-align: left;
         }
     </style>
 </head>
 <body>
 <div class="signup-container">
-    <h1>Sign Up</h1>
+    <h1 class="form-title">Sign Up</h1>
     <p>Create your account</p>
     <form class="signup-form" id="signupForm">
         <div class="form-group" id="fullNameGroup">
