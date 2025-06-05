@@ -11,4 +11,10 @@ public interface ProductRepository extends CrudRepository <Product, Long> {
 
     @Query("SELECT p FROM Product p")
     List<Product> findAllProducts();
+
+    @Query("SELECT p FROM Product p ORDER BY p.price ASC")
+    List<Product> findAllProductsSortedByPriceAsc();
+
+    @Query("SELECT p FROM Product p ORDER BY p.price DESC")
+    List<Product> findAllProductsSortedByPriceDesc();
 }

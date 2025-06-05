@@ -55,4 +55,15 @@ public class ProductService {
     {
         productRepository.deleteById(id);
     }
+
+    public List<Product> getSortedProducts(String sortOrder)
+    {
+        if (sortOrder == null) {
+            return getAll();
+        }
+
+        return "asc".equalsIgnoreCase(sortOrder) ?
+                productRepository.findAllProductsSortedByPriceAsc() :
+                productRepository.findAllProductsSortedByPriceDesc();
+    }
 }

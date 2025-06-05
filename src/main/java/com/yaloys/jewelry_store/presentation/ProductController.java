@@ -1,24 +1,14 @@
 package com.yaloys.jewelry_store.presentation;
 
 import com.yaloys.jewelry_store.data.Product;
-import com.yaloys.jewelry_store.data.ProductRepository;
 import com.yaloys.jewelry_store.user.ProductRequest;
 import com.yaloys.jewelry_store.user.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ProductController {
-
-//    private final ProductRepository productRepository;
-//
-//    public ProductController(ProductRepository productRepository) {
-//        this.productRepository = productRepository;
-//    }
 
     private final ProductService productService;
 
@@ -27,9 +17,12 @@ public class ProductController {
     }
 
     @GetMapping("/product")
-    public String getProducts(Model model)
+    public String getProducts
+    (
+        @RequestParam(value = "direction", required = false) String direction, Model model)
     {
-        model.addAttribute("products", productService.getAll());
+        model.addAttribute("products", productService.getSortedProducts(direction));
+        model.addAttribute("currentDirection", direction);
         return "product";
     }
 
