@@ -25,6 +25,26 @@
             margin-bottom: 30px;
         }
 
+        .home-btn {
+            background-color: #ff69b4;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .home-btn:hover {
+            background-color: #ff1493;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 20, 147, 0.3);
+            border-color: #ff1493;
+        }
+
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -87,16 +107,17 @@
 
 <h1>Welcome, dear customer!</h1>
 
+<a href="/" class="home-btn">← Back to Home</a>
+
 <nav>
     <ul>
-<%--        <li><a href="/">Home</a></li>--%>
         @if(isAuthenticated)
-        @if(isAdmin)
-            <li><a href="/admin">Admin Panel</a></li>
+            @if(isAdmin)
+                <li><a href="/admin">Admin Panel</a></li>
             @endif
         @else
-        <li><a href="/login">Login</a></li>
-        <li><a href="/signup">Sign Up</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
         @endif
     </ul>
 </nav>

@@ -17,6 +17,26 @@
             margin: 0;
         }
 
+        .home-btn {
+            background-color: #ff69b4;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .home-btn:hover {
+            background-color: #ff1493;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 20, 147, 0.3);
+            border-color: #ff1493;
+        }
+
         h1 {
             color: #ff69b4;
             margin-bottom: 30px;
@@ -56,6 +76,8 @@
 </head>
 <body>
 <h1>List of bills</h1>
+<a href="/" class="home-btn">← Back to Home</a>
+
 <table>
     <thead>
     <tr>
