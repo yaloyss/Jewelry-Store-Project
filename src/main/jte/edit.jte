@@ -14,10 +14,12 @@
             padding: 40px;
             margin: 0;
         }
+
         h1 {
             color: #ff69b4;
             margin-bottom: 30px;
         }
+
         .form-container {
             max-width: 500px;
             margin: 0 auto;
@@ -26,57 +28,90 @@
             border-radius: 12px;
             box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
         }
+
         .form-group {
             margin-bottom: 20px;
             text-align: left;
         }
+
         label {
             display: block;
             color: #ff1493;
             font-weight: bold;
             margin-bottom: 5px;
+            font-size: 14px;
         }
+
         input[type="text"], input[type="number"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px 15px;
             border: 2px solid #ffcce6;
             border-radius: 6px;
             font-size: 16px;
             box-sizing: border-box;
+            font-family: 'Raleway', sans-serif;
+            background-color: white;
+            color: #333;
+            transition: all 0.3s ease;
         }
+
         input[type="text"]:focus, input[type="number"]:focus {
             outline: none;
-            border-color: #ff69b4;
+            border-color: #ff1493;
+            box-shadow: 0 0 8px rgba(255, 20, 147, 0.3);
+            transform: translateY(-2px);
         }
+
+        input[type="text"]:hover, input[type="number"]:hover {
+            border-color: #ff69b4;
+            box-shadow: 0 2px 4px rgba(255, 105, 180, 0.2);
+        }
+
         .btn-container {
             display: flex;
             gap: 15px;
             justify-content: center;
             margin-top: 30px;
         }
+
         .btn {
             padding: 12px 24px;
-            border: none;
+            border: 2px solid transparent;
             border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
+            font-family: 'Raleway', sans-serif;
+            transition: all 0.3s ease;
         }
+
         .btn-save {
             background-color: #ff69b4;
             color: white;
+            border-color: #ff69b4;
         }
+
         .btn-save:hover {
             background-color: #ff1493;
+            border-color: #ff1493;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 20, 147, 0.3);
         }
+
         .btn-cancel {
-            background-color: #ccc;
-            color: #333;
+            background-color: #ffffff;
+            color: #ff69b4;
+            border-color: #ff69b4;
         }
+
         .btn-cancel:hover {
-            background-color: #999;
+            background-color: #ff69b4;
+            color: white;
+            border-color: #ff69b4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 20, 147, 0.3);
         }
     </style>
 </head>

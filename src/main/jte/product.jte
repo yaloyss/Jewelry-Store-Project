@@ -42,7 +42,6 @@
             border-color: #ff1493;
         }
 
-        /* Стилі для сортування */
         .sort-controls {
             background-color: #fff0f5;
             padding: 20px;
@@ -110,7 +109,7 @@
         }
 
         .reset-btn {
-            background-color: #fff8f0;
+            background-color: #f8f3f3;
             color: #ff1493;
             border: 2px solid #ff1493;
             padding: 6px 12px;
@@ -274,20 +273,21 @@
         }
 
         .modal-btn-confirm:hover {
-            background-color: #ff00af;
+            background-color: #ff1493;
         }
 
         .modal-btn-cancel {
-            background-color: #ccc;
-            color: #333;
+            background-color: #ffcce6;
+            color: #f466ad;
         }
 
         .modal-btn-cancel:hover {
-            background-color: #999;
+            background-color: #f466ad;
+            color: #ffcce6;
         }
 
         .close {
-            color: #aaa;
+            color: #45112d;
             float: right;
             font-size: 28px;
             font-weight: bold;
@@ -308,9 +308,7 @@
 
 <a href="/product/create" class="add-btn">Add New Product</a>
 
-<!-- Панель сортування -->
 <div class="sort-controls">
-<%--    <h3>Sort Products by Price</h3>--%>
     <div class="sort-options">
         <div class="sort-group">
             <label>Sort by price</label>
